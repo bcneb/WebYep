@@ -313,14 +313,14 @@ echo "Creating documentation packages:\n";
 echo "* english...";
 chdir("$sDestination/en") or fatal(__LINE__);
 $sDocuFolder = "WebYep_Documentation_$sRelease";
-system("cp -R -p ../webyep-dwx/Shared/WebYep/Help/english $sDocuFolder", $iRet); if ($iRet != 0) fatal(__LINE__);
+system("cp -R -p '$sourceRootDir/webyep-dwx/Shared/WebYep/Help/english' '$sDocuFolder'", $iRet); if ($iRet != 0) fatal(__LINE__);
 passthru("$sZIP -r$V {$sDocuFolder}_en.zip $sDocuFolder", $iRet); if ($iRet != 0) fatal(__LINE__);
 echo COLOR_GREEN . " done.\n" . COLOR_END;
 
 echo "* german...";
 chdir("$sDestination/de") or fatal(__LINE__);
 $sDocuFolder = "WebYep_Dokumentation_$sRelease";
-system("cp -R -p ../webyep-dwx/Shared/WebYep/Help/deutsch $sDocuFolder", $iRet); if ($iRet != 0) fatal(__LINE__);
+system("cp -R -p '$sourceRootDir/webyep-dwx/Shared/WebYep/Help/deutsch' '$sDocuFolder'", $iRet); if ($iRet != 0) fatal(__LINE__);
 passthru("$sZIP -r$V {$sDocuFolder}_de.zip $sDocuFolder", $iRet); if ($iRet != 0) fatal(__LINE__);
 echo COLOR_GREEN . " done.\n" . COLOR_END;
 
